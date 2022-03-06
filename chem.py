@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-def chem(inp:str):
-    temp = 4*[""];
+def chem(inp:str)->str:
+    temp = 5*[""];
     i,j = 0,0;
     num = "";
     mark = False;
@@ -21,6 +21,7 @@ def chem(inp:str):
             #deal with the "="
             if "="==inp[i]:
                 j += 1;
+                if j>3:break;
                 continue;
             temp[j]+=inp[i];
     #deal with the last part
@@ -31,9 +32,10 @@ def chem(inp:str):
         temp[j] += num;
     #output
     if 0==j:return temp[0];
-    if 1==j:return temp[0]+"="+temp[1];
-    if 2==j:return temp[0]+"\\frac{\\underline{"+temp[1]+"}}{\\ }"+temp[2];
-    if 3==j:return temp[0]+"\\frac{\\underline{"+temp[1]+"}}{"+temp[2]+"}"+temp[3];
+    elif 1==j:return temp[0]+"="+temp[1];
+    elif 2==j:return temp[0]+"\\frac{\\underline{"+temp[1]+"}}{\\ }"+temp[2];
+    elif 3==j:return temp[0]+"\\frac{\\underline{"+temp[1]+"}}{"+temp[2]+"}"+temp[3];
+    else:return "Error! There seems more then 3\"=\" !";
 
 
 while True:
