@@ -58,6 +58,6 @@ while True:
     inp = input("input:")
     outp = chem(inp)
     print("output:" + outp)
-    os.system("echo " + outp + "| clip")
+    os.system(r"powershell echo \"" + outp + r"\"|clip")  # paste to clipboard
     print("已复制到剪贴板")
     print()
